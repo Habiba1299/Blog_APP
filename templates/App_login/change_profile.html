@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title_block %} Profile Update {% endblock%}
+
+{% block body_block %}
+<form method="POST">
+    <h2>Update Your Profile</h2>
+    {{form|crispy }}
+    {% csrf_token %}
+    <p>
+        To change Password <a href="{% url 'App_login:pass_change' %}"> Click Here</a>
+    </p>
+    <button type="submit" class="btn btn-md btn-success">Update</button>
+    
+</form>
+
+{% endblock%}
